@@ -1,0 +1,179 @@
+{
+  "info": {
+    "_postman_id": "5be3fd7a-1ab8-44c6-a85f-452df008ffac",
+    "name": "GolandAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50084633",
+    "_collection_link": "https://go.postman.co/collection/50084633-5be3fd7a-1ab8-44c6-a85f-452df008ffac?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "busquemos un juego en RAWG",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/search?q=zelda",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "zelda"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Detalle del Juego en RAWG (ID)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/games/22511",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "games",
+            "22511"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar un Juego a tu Colección",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"rawg_id\": 22511,\r\n  \"title\": \"The Legend of Zelda: Breath of the Wild\",\r\n  \"genre\": \"Action, RPG\",\r\n  \"platform\": \"Nintendo Switch\",\r\n  \"cover_url\": \"https://media.rawg.io/media/games/cc1/cc19f7e465907424ea332822f7649d1e.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/library",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "library"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar tu Colección",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/library",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "library"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar el Juego",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"personal_score\": 10,\r\n  \"status\": \"completado\",\r\n  \"personal_note\": \"Obra maestra absoluta.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/library/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "library",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver Estadísticas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/library/stats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "library",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar el Juego",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/library/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "library",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
